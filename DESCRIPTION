@@ -1,10 +1,10 @@
 Package: MAReco
-Title: What the Package Does (One Line, Title Case)
+Title: Package to support Ecosystem Approaches in the Maritimes Region
 Version: 0.0.0.9000
 Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
+    person("Jamie", "Tam", , "jamie.tam@dfo-mpo.gc.ca", role = c("aut", "cre"),
            comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
+Description: This package is to support ecosystem approaches in the Maritimes Region by providing ecosystem indicator data, analysis, and plotting.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
