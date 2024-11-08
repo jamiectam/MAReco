@@ -6,3 +6,5 @@
 ^docs$
 ^pkgdown$
 ^\.github$
+SS_environmental_indicators.Rdata
+eco_indicators_nafo_Rdata
