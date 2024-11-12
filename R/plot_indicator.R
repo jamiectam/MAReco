@@ -7,7 +7,7 @@ plot_indicator <- function(data, x_column, y_column) {
 
   # Determine the last 5 years in the data
   end_year <- max(data[[deparse(substitute(x_column))]], na.rm = TRUE)
-  start_year <- max_year - 4  # Last 5 years
+  start_year <- end_year - 4  # Last 5 years
   last_five <- data |>
     dplyr::filter({{ x_column }} >= start_year)
 
