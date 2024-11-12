@@ -1,5 +1,13 @@
-
-# Define a function to create a line plot with mean and standard deviation lines
+#' Plotting function for time series indicators
+#'
+#' @param data is a data frame with YEAR and Indicator value
+#' @param x_column YEAR column
+#' @param y_column Indicator column
+#'
+#' @return
+#' @export
+#'
+#' @examples
 plot_indicator <- function(data, x_column, y_column) {
   # Calculate mean and standard deviation
   mean_value <- mean(data[[deparse(substitute(y_column))]], na.rm = TRUE)
