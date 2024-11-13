@@ -2,3 +2,4 @@
 
 export(calculate_ind_longterm_mean)
 export(calculate_ind_period_mean)
+export(plot_indicator)
