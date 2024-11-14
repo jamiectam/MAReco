@@ -4,7 +4,7 @@
 #' @param x_column YEAR column
 #' @param y_column Indicator column
 #'
-#' @return
+#' @return a line plot with points, mean+/-sd
 #' @export
 #'
 #' @examples
@@ -28,7 +28,7 @@ plot_indicator <- function(data, x_column, y_column) {
     annotate(geom = "rect",
              xmin = start_year, xmax = end_year,
              ymin = -Inf, ymax = Inf,
-             fill = "darkgreen", alpha = 0.2)+
+             fill = "purple2", alpha = 0.2)+
         # Highlight points outside ±1 SD
     geom_point(
       aes(color = ifelse({{ y_column }} > mean_value + sd_value, "above_sd",
@@ -38,10 +38,10 @@ plot_indicator <- function(data, x_column, y_column) {
       guide = "none" )+
 
     # GLM trend line for the last 5 years
-    geom_smooth(data = last_five, aes(x = {{ x_column }}, y = {{ y_column }}), method = "glm", color = "red", se = FALSE) +
+    # geom_smooth(data = last_five, aes(x = {{ x_column }}, y = {{ y_column }}), method = "glm", color = "red", se = FALSE) +
 
 
-    theme_minimal()
+    theme_classic()
 }
 
 

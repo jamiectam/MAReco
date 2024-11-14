@@ -13,6 +13,9 @@ plot_indicator(data, x_column, y_column)
 
 \item{y_column}{Indicator column}
 }
+\value{
+a line plot with points, mean+/-sd
+}
 \description{
 Plotting function for time series indicators
 }
