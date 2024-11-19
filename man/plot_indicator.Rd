@@ -4,7 +4,7 @@
 \alias{plot_indicator}
 \title{Plotting function for time series indicators}
 \usage{
-plot_indicator(data, x_column, y_column)
+plot_indicator(data, x_column, y_column, y_label)
 }
 \arguments{
 \item{data}{is a data frame with YEAR and Indicator value}
@@ -12,6 +12,8 @@ plot_indicator(data, x_column, y_column)
 \item{x_column}{YEAR column}
 
 \item{y_column}{Indicator column}
+
+\item{y_label}{character string ""}
 }
 \value{
 a line plot with points, mean+/-sd

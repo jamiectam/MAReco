@@ -3,12 +3,13 @@
 #' @param data is a data frame with YEAR and Indicator value
 #' @param x_column YEAR column
 #' @param y_column Indicator column
+#' @param y_label character string ""
 #'
 #' @return a line plot with points, mean+/-sd
 #' @export
 #'
 #' @examples
-plot_indicator <- function(data, x_column, y_column) {
+plot_indicator <- function(data, x_column, y_column, y_label) {
   # Calculate mean and standard deviation
   mean_value <- mean(data[[deparse(substitute(y_column))]], na.rm = TRUE)
   sd_value <- sd(data[[deparse(substitute(y_column))]], na.rm = TRUE)
@@ -25,6 +26,7 @@ plot_indicator <- function(data, x_column, y_column) {
     geom_hline(yintercept = mean_value, color = "darkgreen", linetype = "dashed", size = 1) +  # Mean line
     geom_hline(yintercept = mean_value + sd_value, color = "darkgreen") +  # +1 SD
     geom_hline(yintercept = mean_value - sd_value, color = "darkgreen") +  # -1 SD
+    labs(y = y_label) +
     annotate(geom = "rect",
              xmin = start_year, xmax = end_year,
              ymin = -Inf, ymax = Inf,
