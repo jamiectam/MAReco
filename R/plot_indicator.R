@@ -33,7 +33,7 @@ plot_indicator <- function(data, x_column, y_column) {
     geom_point(
       aes(color = ifelse({{ y_column }} > mean_value + sd_value, "above_sd",
                          ifelse({{ y_column }} < mean_value - sd_value, "below_sd", "within_sd"))),
-      size = 3) +
+      size = 2) +
     scale_color_manual(values = c("above_sd" = "orange", "below_sd" = "blue", "within_sd" = "black"),
       guide = "none" )+
 
