@@ -25,7 +25,7 @@ plot_catch_diversity <- function(data, x_column, y_column, color_var,
     ) +
     scale_color_discrete(labels = legend_labels) +
     # geom_point(aes(color = {{color_var}})) +
-    geom_smooth(method=loess, se=FALSE)+ #add loess here?
+    geom_smooth(method="loess", se=FALSE)+ #can change meothod
     geom_smooth(aes(x = {{ x_column }}, y = {{ y_column }}), method = "loess", color = "blue", se = TRUE)
 
 }
