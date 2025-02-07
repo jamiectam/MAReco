@@ -13,7 +13,7 @@ plot_indicator_ref_period(data, x_column, y_column, y_label)
 
 \item{y_column}{indicator value column}
 
-\item{y_label}{indicator name as character string "}
+\item{y_label}{indicator name as character string ""}
 }
 \value{
 a line plot with points, mean+/-sd

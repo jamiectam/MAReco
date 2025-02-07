@@ -3,7 +3,7 @@
 #' @param data indicator data
 #' @param x_column year column
 #' @param y_column indicator value column
-#' @param y_label indicator name as character string "
+#' @param y_label indicator name as character string ""
 #'
 #' @return a line plot with points, mean+/-sd
 #' @export
@@ -20,8 +20,8 @@ plot_indicator_ref_period <- function(data, x_column, y_column, y_label) {
 
   # Create the plot
   ggplot(data, aes(x = {{ x_column }}, y = {{ y_column }})) +
-    geom_line(color = "black") +  # Line plot
-    geom_hline(yintercept = mean_value, color = "darkgreen", linetype = "dashed", size = 1) +  # Mean line
+    geom_path(color = "black") +  # Line plot
+    geom_hline(yintercept = mean_value, color = "darkgreen", linetype = "dashed", linewidth = 1) +  # Mean line
     geom_hline(yintercept = mean_value + sd_value, color = "darkgreen") +  # +1 SD
     geom_hline(yintercept = mean_value - sd_value, color = "darkgreen") +  # -1 SD
     labs(y = y_label) +

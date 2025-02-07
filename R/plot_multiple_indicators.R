@@ -33,7 +33,7 @@ ggplot2::ggplot(data, aes(x = {{ x_column }}, y = {{ y_column }}, color = {{colo
   ) +
     scale_color_discrete(labels = legend_labels) +
     geom_point(aes(color = {{color_var}})) +
-    geom_line(aes(color = {{color_var}}))
+    geom_path(aes(color = {{color_var}}))
 
 }
 

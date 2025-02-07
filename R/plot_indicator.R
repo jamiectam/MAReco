@@ -22,7 +22,7 @@ plot_indicator <- function(data, x_column, y_column, y_label) {
 
   # Create the plot
   ggplot(data, aes(x = {{ x_column }}, y = {{ y_column }})) +
-    geom_line(color = "black") +  # Line plot
+    geom_path(color = "black") +  # Line plot
     geom_hline(yintercept = mean_value, color = "darkgreen", linetype = "dashed", size = 1) +  # Mean line
     geom_hline(yintercept = mean_value + sd_value, color = "darkgreen") +  # +1 SD
     geom_hline(yintercept = mean_value - sd_value, color = "darkgreen") +  # -1 SD
