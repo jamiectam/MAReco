@@ -1,11 +1,11 @@
-#'plotting function for indicators with reference points for 30 years consistent with climate data
+#'plotting function for indicators with reference points for 30 years consistent with climate data using +/- 0.5 SD
 #'
 #' @param data indicator data
 #' @param x_column year column
 #' @param y_column indicator value column
 #' @param y_label indicator name as character string ""
 #'
-#' @return a line plot with points, mean+/-sd
+#' @return a line plot with points, mean+/-0.5 sd
 #' @export
 #'
 #' @examples
@@ -14,7 +14,7 @@ plot_indicator_ref_period <- function(data, x_column, y_column, y_label) {
   data_1991_2020 <- data |>
     dplyr::filter({{ x_column }} >= 1991 & {{ x_column }} <= 2020)
 
-   # Determine the last 5 years in the data
+  # Determine the last 5 years in the data
   end_year <- max(data[[deparse(substitute(x_column))]], na.rm = TRUE)
   start_year <- end_year - 4  # Last 5 years
   last_five <- data |>
@@ -23,7 +23,8 @@ plot_indicator_ref_period <- function(data, x_column, y_column, y_label) {
 
   # Calculate mean and standard deviation for 1991-2020
   mean_value <- mean(data_1991_2020[[deparse(substitute(y_column))]], na.rm = TRUE)
-  sd_value <- sd(data_1991_2020[[deparse(substitute(y_column))]], na.rm = TRUE)
+  # SD 0.5
+  sd_value <- sd(data_1991_2020[[deparse(substitute(y_column))]], na.rm = TRUE)*0.5
 
   # Create the plot
   ggplot(data, aes(x = {{ x_column }}, y = {{ y_column }})) +
