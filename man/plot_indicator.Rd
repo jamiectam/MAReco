@@ -2,7 +2,7 @@
 % Please edit documentation in R/plot_indicator.R
 \name{plot_indicator}
 \alias{plot_indicator}
-\title{Plotting function for time series indicators}
+\title{Plotting function for time series indicators for Ecosystem Summary Reports}
 \usage{
 plot_indicator(data, x_column, y_column, y_label)
 }
@@ -19,5 +19,13 @@ plot_indicator(data, x_column, y_column, y_label)
 a line plot with points, mean+/-sd
 }
 \description{
-Plotting function for time series indicators
+Plotting function for time series indicators for Ecosystem Summary Reports
+}
+\examples{
+\dontrun{ TODO
+}
+
+}
+\author{
+Jamie C. Tam
 }

@@ -1,4 +1,4 @@
-#' Plotting function for time series indicators
+#' Plotting function for time series indicators for Ecosystem Summary Reports
 #'
 #' @param data is a data frame with YEAR and Indicator value
 #' @param x_column YEAR column
@@ -7,8 +7,11 @@
 #'
 #' @return a line plot with points, mean+/-sd
 #' @export
-#'
+#' @author Jamie C. Tam
 #' @examples
+#' \dontrun{ TODO
+#' }
+#'
 plot_indicator <- function(data, x_column, y_column, y_label) {
   # Calculate mean and standard deviation
   mean_value <- mean(data[[deparse(substitute(y_column))]], na.rm = TRUE)
