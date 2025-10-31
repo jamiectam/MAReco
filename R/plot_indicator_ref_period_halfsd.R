@@ -6,12 +6,11 @@
 #' @param y_label indicator name as character string ""
 #'
 #' @return a line plot with points, mean+/-0.5 sd
-#' @export
 #' @author Jamie C. Tam
+#' @export
 #'
 #' @examples
-#'
-plot_indicator_ref_period <- function(data, x_column, y_column, y_label) {
+plot_indicator_ref_period_halfsd <- function(data, x_column, y_column, y_label) {
   # Filter data for the years 1991-2020
   data_1991_2020 <- data |>
     dplyr::filter({{ x_column }} >= 1991 & {{ x_column }} <= 2020)
